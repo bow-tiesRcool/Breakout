@@ -452,7 +452,8 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    UNet: 1
   cloudProjectId: 6be8d071-2e8c-4928-b5c4-8b2d0e193b00
   projectName: Breakout
   organizationId: bow-tiesrcool
