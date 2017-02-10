@@ -39,11 +39,14 @@ public class GameManager : MonoBehaviour
         instance.lives = instance.lives - 1;
         instance.livesUI.text = "Lives: " + instance.lives;
 
-        if (instance.lives < 0)
+        if (instance.lives <= 0)
         {
             instance.gameOverUI.text = "You Lose";
             instance.gameOverUI.gameObject.SetActive(true);
-
+        }
+        else
+        {
+            instance.livesUI.text = "Lives: " + instance.lives;
         }
     }
     
