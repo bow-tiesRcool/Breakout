@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         if (instance.lives <= 0)
         {
-            instance.gameOverUI.text = "You Lose";
+            instance.gameOverUI.text = "Game Over";
             instance.gameOverUI.gameObject.SetActive(true);
         }
         else
