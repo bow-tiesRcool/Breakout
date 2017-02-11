@@ -11,11 +11,15 @@ public class GameManager : MonoBehaviour
     public Text scoreUI;
     public Text highScoreUI;
     public Text gameOverUI;
-
+    public Text WinnerUI;
+    
     public int score = 0;
     public int lives = 3;
     public int highScore = 0;
+    private int countBricks;
 
+    private GameObject[] getCount;
+   
     void Awake ()
     {
         if (instance == null)
@@ -28,12 +32,24 @@ public class GameManager : MonoBehaviour
             Debug.Log("Nooo");
         }
     }
+
     void Start ()
     {
         livesUI.text = "Lives: " + lives;
         scoreUI.text = "Score: " + score;
         highScoreUI.text = "HighScore: " + highScore;
-    } 
+        CountBricks();
+    }
+
+    private void Update()
+    {
+        if (instance.countBricks == 0)
+        {
+            instance.WinnerUI.text = "WINNER!";
+            instance.WinnerUI.gameObject.SetActive(true);
+        }
+    }
+
     public static void LostBall ()
     {
         instance.lives = instance.lives - 1;
@@ -60,5 +76,14 @@ public class GameManager : MonoBehaviour
             instance.highScore = points;
             instance.highScoreUI.text = "HighScore: " + instance.score;
         }
+        CountBricks();
+    }
+    
+    public static void CountBricks ()
+    {
+        instance.getCount = GameObject.FindGameObjectsWithTag("Brick");
+        instance.countBricks = instance.getCount.Length;
+        Debug.Log(instance.countBricks + "Bricks");
+
     }
 }
