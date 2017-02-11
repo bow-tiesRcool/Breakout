@@ -1,0 +1,25 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ShakeController : MonoBehaviour {
+
+    public float shakeDuration;
+	public void Shake()
+    {
+        StartCoroutine("ShakeCoroutine");
+    }
+
+    IEnumerator ShakeCoroutine()
+    {
+        Vector3 startPos = transform.position;
+        for (float t = 0; t < shakeDuration; t += Time.deltaTime)
+        {
+            float frac = t / shakeDuration;
+            transform.position = startPos + Vector3.Lerp(Random.insideUnitCircle, Vector3.zero, frac);
+            yield return new WaitForEndOfFrame();
+        }
+        transform.position = startPos;
+    }
+
+}

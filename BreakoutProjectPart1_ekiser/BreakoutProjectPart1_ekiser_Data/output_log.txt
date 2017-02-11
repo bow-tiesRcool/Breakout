@@ -7,43 +7,43 @@ Direct3D:
     VRAM:     947 MB
     Driver:   10.18.13.5362
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.112 seconds
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.028 seconds
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ekiser\Projects\Breakout\BreakoutProjectPart1_ekiser\BreakoutProjectPart1_ekiser_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.888856 ms
+UnloadTime: 0.748358 ms
 Setting up 3 worker threads for Enlighten.
-  Thread -> id: 3a8 -> priority: 1 
-  Thread -> id: 2528 -> priority: 1 
-  Thread -> id: 1b18 -> priority: 1 
+  Thread -> id: ac8 -> priority: 1 
+  Thread -> id: 14ac -> priority: 1 
+  Thread -> id: 1bf0 -> priority: 1 
 The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
  
 (Filename:  Line: 1754)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.031291 ms
+UnloadTime: 5.062085 ms
 yeas!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1202.
-Total: 0.286448 ms (FindLiveObjects: 0.041379 ms CreateObjectMapping: 0.024378 ms MarkObjects: 0.166800 ms  DeleteObjects: 0.053568 ms)
+Total: 0.275862 ms (FindLiveObjects: 0.064154 ms CreateObjectMapping: 0.016680 ms MarkObjects: 0.146592 ms  DeleteObjects: 0.047794 ms)
 
 98Bricks
  
@@ -69,9 +69,13 @@ Total: 0.286448 ms (FindLiveObjects: 0.041379 ms CreateObjectMapping: 0.024378 m
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+92Bricks
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.871855 ms
+UnloadTime: 0.918367 ms
 
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 276.
-Total: 0.236728 ms (FindLiveObjects: 0.035926 ms CreateObjectMapping: 0.008340 ms MarkObjects: 0.141139 ms  DeleteObjects: 0.050681 ms)
+Total: 0.228068 ms (FindLiveObjects: 0.038171 ms CreateObjectMapping: 0.008019 ms MarkObjects: 0.131516 ms  DeleteObjects: 0.049719 ms)
 
