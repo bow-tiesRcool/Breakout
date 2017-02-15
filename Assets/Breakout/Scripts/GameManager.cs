@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public BrickController brickPrefab;
+    public int rows = 5;
+    public int columns = 10;
     public Text livesUI;
     public Text scoreUI;
     public Text highScoreUI;
@@ -39,6 +42,19 @@ public class GameManager : MonoBehaviour
         scoreUI.text = "Score: " + score;
         highScoreUI.text = "HighScore: " + highScore;
         CountBricks();
+        CreateBricks();
+    }
+
+    void CreateBricks()
+    {
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                BrickController brick = Instantiate(brickPrefab) as BrickController;
+                brick.transform.position = new Vector3(col + 1, row + 1, 0);
+            }
+        }
     }
 
     private void Update()

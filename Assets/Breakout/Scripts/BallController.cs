@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    public ParticleSystem hitParticles;
+    public ParticleSystem paddle;
     public float speed = 1;
     Rigidbody body;
+    public AudioSource sound;
+    public AudioSource sound2;
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        sound = GetComponent<AudioSource>();
         PreLaunch();
     }
 
@@ -69,5 +74,15 @@ public class BallController : MonoBehaviour
     {
         ShakeController shake = Camera.main.gameObject.GetComponent<ShakeController>();
         shake.Shake();
+
+        ParticleSystem p = (c.gameObject.tag == "Player") ? paddle : hitParticles;
+        AudioSource s = (c.gameObject.tag == "Player") ? sound2 : sound;
+        
+        p.Stop();
+        p.transform.position = transform.position;
+        p.transform.up = body.velocity;
+        p.Play();
+        s.Stop();
+        s.Play();
     }
 }

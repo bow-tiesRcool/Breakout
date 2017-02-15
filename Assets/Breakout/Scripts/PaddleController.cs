@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PaddleController : MonoBehaviour {
+public class PaddleController : MonoBehaviour
+{
 
+    
     public static PaddleController instance;
 
     public float speed = 10;
@@ -20,8 +22,8 @@ public class PaddleController : MonoBehaviour {
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
-        transform.position += Vector3.right* speed * x* Time.deltaTime;
-        transform.localEulerAngles = Vector3.back* tilt * x;
+        transform.position += Vector3.right * speed * x * Time.deltaTime;
+        transform.localEulerAngles = Vector3.back * tilt * x;
 
         Vector3 v = Camera.main.WorldToViewportPoint(transform.position);
         v.x = Mathf.Clamp01(v.x);
