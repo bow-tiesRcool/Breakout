@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public ParticleSystem hitParticles;
+    //public ParticleSystem hitParticles;
     public ParticleSystem paddle;
+    public ParticleSystem hitParticlesPrefab;
+    List<ParticleSystem> particlePool = new List<ParticleSystem>();
     public float speed = 1;
     Rigidbody body;
     public AudioSource sound;
@@ -75,13 +77,36 @@ public class BallController : MonoBehaviour
         ShakeController shake = Camera.main.gameObject.GetComponent<ShakeController>();
         shake.Shake();
 
-        ParticleSystem p = (c.gameObject.tag == "Player") ? paddle : hitParticles;
-        AudioSource s = (c.gameObject.tag == "Player") ? sound2 : sound;
+        ParticleSystem hitParticles = null;
+        for (int i = 0; i < particlePool.Count; i++)
+        {
+            ParticleSystem p = particlePool[i];
+            if (p.isStopped)
+            {
+                hitParticles = p;
+                Debug.Log("reusing from my pool");
+                break;
+            }
+        }
+
+        if (hitParticles == null)
+        {
+            hitParticles = Instantiate(hitParticlesPrefab) as ParticleSystem;
+            particlePool.Add(hitParticles);
+        } 
         
-        p.Stop();
-        p.transform.position = transform.position;
-        p.transform.up = body.velocity;
-        p.Play();
+        ParticleSystem a = (c.gameObject.tag == "Player") ? paddle : hitParticles;
+        AudioSource s = (c.gameObject.tag == "Player") ? sound2 : sound;
+
+        //hitParticles.Stop();
+        //hitParticles.transform.position = transform.position;
+        //hitParticles.transform.up = body.velocity;
+        //hitParticles.Play();
+
+        a.Stop();
+        a.transform.position = transform.position;
+        a.transform.up = body.velocity;
+        a.Play();
         s.Stop();
         s.Play();
     }

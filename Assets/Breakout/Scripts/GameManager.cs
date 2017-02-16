@@ -7,9 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public BrickController brickPrefab;
     public int rows = 5;
     public int columns = 10;
+    public float edgePadding = 0.1f;
+    public float bottomPadding = 0.4f;
+    BrickController[] brickArray;
+
     public Text livesUI;
     public Text scoreUI;
     public Text highScoreUI;
@@ -41,28 +46,27 @@ public class GameManager : MonoBehaviour
         livesUI.text = "Lives: " + lives;
         scoreUI.text = "Score: " + score;
         highScoreUI.text = "HighScore: " + highScore;
-        CountBricks();
         CreateBricks();
     }
 
     void CreateBricks()
     {
+        Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(edgePadding, bottomPadding, 0));
+        Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1 - edgePadding, 1 - edgePadding, 0));
+        bottomLeft.z = 0;
+        float w = (topRight.x - bottomLeft.x) / (float)columns;
+        float h = (topRight.y - bottomLeft.y) / (float)rows;
+
+
+        brickArray = new BrickController[rows * columns];
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < columns; col++)
             {
                 BrickController brick = Instantiate(brickPrefab) as BrickController;
-                brick.transform.position = new Vector3(col + 1, row + 1, 0);
+                brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
+                brickArray[row * columns + col] = brick;
             }
-        }
-    }
-
-    private void Update()
-    {
-        if (instance.countBricks == 0)
-        {
-            instance.WinnerUI.text = "WINNER!";
-            instance.WinnerUI.gameObject.SetActive(true);
         }
     }
 
@@ -87,19 +91,25 @@ public class GameManager : MonoBehaviour
         instance.score += points;
         instance.scoreUI.text = "Score: " + instance.score;
 
+        bool hasWon = true;
+        for (int i = 0; i < instance.brickArray.Length; i++)
+        {
+            BrickController brick = instance.brickArray[i];
+            if (brick.gameObject.activeSelf)
+            {
+                hasWon = false;
+                break;
+            }
+        }
         if (instance.score > instance.highScore)
         {
             instance.highScore = points;
             instance.highScoreUI.text = "HighScore: " + instance.score;
         }
-        CountBricks();
-    }
-    
-    public static void CountBricks ()
-    {
-        instance.getCount = GameObject.FindGameObjectsWithTag("Brick");
-        instance.countBricks = instance.getCount.Length;
-        Debug.Log(instance.countBricks + "Bricks");
-
+        if (hasWon)
+        {
+            instance.WinnerUI.text = "WINNER!";
+            instance.WinnerUI.gameObject.SetActive(true);
+        }
     }
 }
