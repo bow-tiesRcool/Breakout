@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public int columns = 10;
     public float edgePadding = 0.1f;
     public float bottomPadding = 0.4f;
-    BrickController[] brickArray;
-
+    //BrickController[] brickArray;
+    List<BrickController> brickList = new List<BrickController>();
     public Text livesUI;
     public Text scoreUI;
     public Text highScoreUI;
@@ -58,14 +58,15 @@ public class GameManager : MonoBehaviour
         float h = (topRight.y - bottomLeft.y) / (float)rows;
 
 
-        brickArray = new BrickController[rows * columns];
+        //brickArray = new BrickController[rows * columns];
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < columns; col++)
             {
                 BrickController brick = Instantiate(brickPrefab) as BrickController;
                 brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
-                brickArray[row * columns + col] = brick;
+                //brickArray[row * columns + col] = brick;
+                brickList.Add(brick);
             }
         }
     }
@@ -92,15 +93,23 @@ public class GameManager : MonoBehaviour
         instance.scoreUI.text = "Score: " + instance.score;
 
         bool hasWon = true;
-        for (int i = 0; i < instance.brickArray.Length; i++)
+        //for (int i = 0; i < instance.brickArray.Length; i++)
+        //{
+        //    BrickController brick = instance.brickArray[i];
+        //    if (brick.gameObject.activeSelf)
+        //    {
+        //        hasWon = false;
+        //        break;
+        //    }
+        //}
+        for (int i = 0; i < instance.brickList.Count; i++)
         {
-            BrickController brick = instance.brickArray[i];
+            BrickController brick = instance.brickList[i];
             if (brick.gameObject.activeSelf)
             {
                 hasWon = false;
                 break;
             }
-        }
         if (instance.score > instance.highScore)
         {
             instance.highScore = points;
