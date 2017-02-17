@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
             instance.livesUI.text = "Lives: " + instance.lives;
         }
     }
-    
-    public static void BrickBroken (int points)
+
+    public static void BrickBroken(int points)
     {
         instance.score += points;
         instance.scoreUI.text = "Score: " + instance.score;
@@ -110,15 +110,16 @@ public class GameManager : MonoBehaviour
                 hasWon = false;
                 break;
             }
-        if (instance.score > instance.highScore)
-        {
-            instance.highScore = points;
-            instance.highScoreUI.text = "HighScore: " + instance.score;
-        }
-        if (hasWon)
-        {
-            instance.WinnerUI.text = "WINNER!";
-            instance.WinnerUI.gameObject.SetActive(true);
+            if (instance.score > instance.highScore)
+            {
+                instance.highScore = points;
+                instance.highScoreUI.text = "HighScore: " + instance.score;
+            }
+            if (hasWon)
+            {
+                instance.WinnerUI.text = "WINNER!";
+                instance.WinnerUI.gameObject.SetActive(true);
+            }
         }
     }
 }

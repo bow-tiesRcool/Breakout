@@ -44,11 +44,14 @@ public class BallController : MonoBehaviour
                 v.x *= 0.9f;
                 body.velocity = v.normalized * speed;
             }
+            transform.up = v;
+            transform.localScale = new Vector3(0.9f, 1.1f, 1);
 
             DeathCheck();
         }
         else
         {
+            transform.localScale = Vector3.one;
             if (Input.GetButton("Jump"))
             {
                 Launch();
@@ -74,6 +77,10 @@ public class BallController : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        ContactPoint cp = c.contacts[0];
+        transform.up = cp.normal;
+        transform.localScale = new Vector3(1.5f, 0.5f, 1);
+
         ShakeController shake = Camera.main.gameObject.GetComponent<ShakeController>();
         shake.Shake();
 
