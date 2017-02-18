@@ -7,11 +7,15 @@ public class BallController : MonoBehaviour
     //public ParticleSystem hitParticles;
     public ParticleSystem paddle;
     public ParticleSystem hitParticlesPrefab;
+    public ParticleSystem lifeLost;
     List<ParticleSystem> particlePool = new List<ParticleSystem>();
     public float speed = 1;
     Rigidbody body;
     public AudioSource sound;
-    public AudioSource sound2;
+    public AudioClip hitPaddle;
+    public AudioClip hitWall;
+    public AudioClip hitBrick;
+    public AudioClip lostLife;
     void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -66,6 +70,10 @@ public class BallController : MonoBehaviour
             GameManager.LostBall();
             if (GameManager.instance.lives > 0)
             {
+                sound.clip = lostLife;
+                sound.Play();
+                lifeLost.Play();
+
                 PreLaunch();
             }
             else
@@ -84,6 +92,21 @@ public class BallController : MonoBehaviour
         ShakeController shake = Camera.main.gameObject.GetComponent<ShakeController>();
         shake.Shake();
 
+        if (c.gameObject.tag == "Player")
+        {
+            sound.clip = hitPaddle;
+            sound.Play();
+        }
+        else if (c.gameObject.tag == "Brick")
+        {
+            sound.clip = hitBrick;
+            sound.Play();
+        }
+        else
+        {
+            sound.clip = hitWall;
+            sound.Play();
+        }
         ParticleSystem hitParticles = null;
         for (int i = 0; i < particlePool.Count; i++)
         {
@@ -103,8 +126,7 @@ public class BallController : MonoBehaviour
         } 
         
         ParticleSystem a = (c.gameObject.tag == "Player") ? paddle : hitParticles;
-        AudioSource s = (c.gameObject.tag == "Player") ? sound2 : sound;
-
+        
         //hitParticles.Stop();
         //hitParticles.transform.position = transform.position;
         //hitParticles.transform.up = body.velocity;
@@ -114,7 +136,6 @@ public class BallController : MonoBehaviour
         a.transform.position = transform.position;
         a.transform.up = body.velocity;
         a.Play();
-        s.Stop();
-        s.Play();
+        
     }
 }
