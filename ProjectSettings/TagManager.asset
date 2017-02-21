@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Brick
   - Ball
+  - PowerUp
   layers:
   - Default
   - TransparentFX

@@ -355,6 +355,7 @@ MonoBehaviour:
   WinnerUI: {fileID: 1153779130}
   score: 0
   lives: 3
+  highScore: 0
 --- !u!114 &554789135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +528,7 @@ GameObject:
   - component: {fileID: 733232670}
   - component: {fileID: 733232672}
   - component: {fileID: 733232671}
+  - component: {fileID: 733232673}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -587,6 +589,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 733232669}
   m_Mesh: {fileID: 4300000, guid: 288a99cda8231704aaf67c01422c04d9, type: 3}
+--- !u!95 &733232673
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 733232669}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 141bf289d8077d6448bf16488eb52dd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &808241992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   tilt: 5
+  triggerName: PowerUp
+  animator: {fileID: 733232673}
 --- !u!4 &1120467169
 Transform:
   m_ObjectHideFlags: 0

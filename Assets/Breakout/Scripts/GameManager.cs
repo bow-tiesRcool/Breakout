@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     
     public int score = 0;
     public int lives = 3;
-    public static int highScore;
+    public int highScore;
     private int countBricks;
 
     private GameObject[] getCount;
@@ -47,18 +47,17 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
-       
-        if (PlayerPrefs.HasKey("highscore") == true)
-        {
-          highScore = PlayerPrefs.GetInt("highscore");    
-        }
-        highScoreUI.text = "HighScore: " + highScore;
-        highScoreUI = GetComponent<Text>();
+        instance.highScoreUI.text = "HighScore: " + PlayerPrefs.GetInt("highScore");
         sound = GetComponent<AudioSource>();
         livesUI.text = "Lives: " + lives;
         scoreUI.text = "Score: " + score;
         
         CreateBricks();
+    }
+
+    private void Update()
+    {
+        HighScore();
     }
 
     void CreateBricks()
@@ -92,6 +91,7 @@ public class GameManager : MonoBehaviour
             instance.sound.Play();
             instance.gameOverUI.text = "Game Over";
             instance.gameOverUI.gameObject.SetActive(true);
+            HighScoreSaver();
         }
         else
         {
@@ -120,26 +120,46 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (instance.score > highScore)
-        {
-            highScore = instance.score;
-            instance.highScoreUI.text = "HighScore: " + instance.score;
-
-            PlayerPrefs.SetInt("highscore", highScore);
-            highScore = PlayerPrefs.GetInt("highscore");
-        }
-
         if (hasWon)
         {
             instance.WinnerUI.text = "WINNER!";
             instance.WinnerUI.gameObject.SetActive(true);
             instance.sound.clip = instance.winner;
             instance.sound.Play();
+            HighScoreSaver();
 
         }
     }
-
-    void DropPowerUp()
+    public static void HighScore()
+    {
+        if (instance.score > instance.highScore)
+        {
+            instance.highScore = instance.score;
+        }
+        if (instance.highScore > PlayerPrefs.GetInt("highScore"))
+        {
+            instance.highScoreUI.text = "highScore: " + instance.highScore;
+        }
+    }
+    public static void HighScoreSaver()
+    {
+        if (PlayerPrefs.HasKey("highScore") == true)
+        {
+            if (instance.highScore > PlayerPrefs.GetInt("highScore"))
+            {
+                int newHighScore = instance.highScore;
+                PlayerPrefs.SetInt("highScore", newHighScore);
+                PlayerPrefs.Save();
+            }
+        }
+        else
+        {
+            int newHighScore = instance.highScore;
+            PlayerPrefs.SetInt("highScore", newHighScore);
+            PlayerPrefs.Save();
+        }
+    }
+void DropPowerUp()
     {
         GameObject power = Instantiate(powerUp);
         power.transform.position = GameObject.FindGameObjectWithTag("Ball").transform.position;

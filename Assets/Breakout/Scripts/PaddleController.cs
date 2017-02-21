@@ -11,6 +11,10 @@ public class PaddleController : MonoBehaviour
     public float speed = 10;
     public float tilt = 5;
     Renderer renderer;
+    public string triggerName = "PowerUp";
+
+    public Animator animator;
+
     void Awake()
     {
         if (instance == null)
@@ -39,11 +43,18 @@ public class PaddleController : MonoBehaviour
         v.x = Mathf.Clamp01(v.x);
         transform.position = Camera.main.ViewportToWorldPoint(v) - Vector3.right * xOffset;
     }
+
+    void OnCollisionEnter(Collision c)
+    {
+        animator.SetTrigger(triggerName);
+    }
+
     void OnTriggerEnter(Collider c)
     {
-        if (c.transform.parent.gameObject.tag == "PowerUp")
+        if (c.transform.gameObject.tag == "PowerUp")
         {
             Debug.Log("Power up aquired!");
+            animator.SetTrigger(triggerName);
         }
     }
 }
