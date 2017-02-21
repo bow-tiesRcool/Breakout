@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float edgePadding = 0.1f;
     public float bottomPadding = 0.4f;
     List<BrickController> brickList = new List<BrickController>();
+    public ParticleSystem pointParticle;
     public AudioSource sound;
     public AudioClip gameOver;
     public AudioClip winner;
@@ -102,7 +103,9 @@ public class GameManager : MonoBehaviour
     public static void BrickBroken(int points)
     {
         instance.score += points;
+        instance.pointParticle.Play();
         instance.scoreUI.text = "Score: " + instance.score;
+        
         if (Random.value < 0.1f)
         {
             instance.DropPowerUp();

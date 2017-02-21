@@ -51,10 +51,10 @@ public class PaddleController : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
-        if (c.transform.gameObject.tag == "PowerUp")
+        if (c.gameObject.tag == "PowerUp")
         {
             Debug.Log("Power up aquired!");
-            animator.SetTrigger(triggerName);
+            transform.localScale = new Vector3(2, 1, 1);
         }
     }
 }
