@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public BrickController brickPrefab;
+    public BrickController brick2Prefab;
     public GameObject powerUp;
     public int rows = 5;
     public int columns = 10;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     List<BrickController> brickList = new List<BrickController>();
     public ParticleSystem pointParticle;
     public AudioSource sound;
+    public AudioClip music;
     public AudioClip gameOver;
     public AudioClip winner;
     public Text livesUI;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     public Text highScoreUI;
     public Text gameOverUI;
     public Text WinnerUI;
+    public int level = 1;
     
     
     public int score = 0;
@@ -52,7 +55,8 @@ public class GameManager : MonoBehaviour
         sound = GetComponent<AudioSource>();
         livesUI.text = "Lives: " + lives;
         scoreUI.text = "Score: " + score;
-        
+        instance.sound.clip = instance.music;
+        instance.sound.Play();
         CreateBricks();
     }
 
@@ -69,14 +73,31 @@ public class GameManager : MonoBehaviour
         float w = (topRight.x - bottomLeft.x) / (float)columns;
         float h = (topRight.y - bottomLeft.y) / (float)rows;
 
-
-        for (int row = 0; row < rows; row++)
+        if (level > 1)
         {
-            for (int col = 0; col < columns; col++)
+            instance.rows = Random.Range(3, 7);
+            instance.columns = Random.Range(5, 10);
+
+            for (int row = 0; row < instance.rows; row++)
             {
-                BrickController brick = Instantiate(brickPrefab) as BrickController;
-                brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
-                brickList.Add(brick);
+                for (int col = 0; col < instance.columns; col++)
+                {
+                    BrickController brick = Instantiate(brick2Prefab) as BrickController;
+                    brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
+                    brickList.Add(brick);
+                }
+            }
+        }
+        else
+        {
+            for (int row = 0; row < instance.rows; row++)
+            {
+                for (int col = 0; col < instance.columns; col++)
+                {
+                    BrickController brick = Instantiate(brickPrefab) as BrickController;
+                    brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
+                    brickList.Add(brick);
+                }
             }
         }
     }
@@ -88,6 +109,7 @@ public class GameManager : MonoBehaviour
 
         if (instance.lives <= 0)
         {
+            instance.sound.Stop();
             instance.sound.clip = instance.gameOver;
             instance.sound.Play();
             instance.gameOverUI.text = "Game Over";
@@ -125,12 +147,11 @@ public class GameManager : MonoBehaviour
 
         if (hasWon)
         {
-            instance.WinnerUI.text = "WINNER!";
-            instance.WinnerUI.gameObject.SetActive(true);
+            instance.sound.Stop();
             instance.sound.clip = instance.winner;
             instance.sound.Play();
-            HighScoreSaver();
-
+            instance.level++;
+            instance.CreateBricks();
         }
     }
     public static void HighScore()

@@ -44,11 +44,6 @@ public class PaddleController : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(v) - Vector3.right * xOffset;
     }
 
-    void OnCollisionEnter(Collision c)
-    {
-        animator.SetTrigger(triggerName);
-    }
-
     void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "PowerUp")
