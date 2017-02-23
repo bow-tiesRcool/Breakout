@@ -49,7 +49,17 @@ public class PaddleController : MonoBehaviour
         if (c.gameObject.tag == "PowerUp")
         {
             Debug.Log("Power up aquired!");
-            transform.localScale = new Vector3(2, 1, 1);
+            transform.localScale += new Vector3(0.5f, 0, 0);
+        }
+        else if (c.gameObject.tag == "NegativePowerUp")
+        {
+            Debug.Log("Negative power up aquired!");
+            transform.localScale -= new Vector3(0.5f, 0, 0);
+        }
+        else if (c.gameObject.tag == "LifeUp")
+        {
+            Debug.Log("Life added");
+            GameManager.AddLife();
         }
     }
 }

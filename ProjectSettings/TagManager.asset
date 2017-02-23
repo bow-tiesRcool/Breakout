@@ -7,6 +7,8 @@ TagManager:
   - Brick
   - Ball
   - PowerUp
+  - NegativePowerUp
+  - LifeUp
   layers:
   - Default
   - TransparentFX

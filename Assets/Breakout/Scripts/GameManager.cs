@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public BrickController brickPrefab;
+    public BrickController brick1Prefab;
     public BrickController brick2Prefab;
-    public GameObject powerUp;
+    public BrickController brick3Prefab;
+    public BrickController brick4Prefab;
+    public GameObject[] powerUps;
+    [Range(0, 1)]public float powerUpChance = 0.5f;
     public int rows = 5;
     public int columns = 10;
     public float edgePadding = 0.1f;
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
     public Text gameOverUI;
     public Text WinnerUI;
     public int level = 1;
+    public int leveltype;
     
     
     public int score = 0;
@@ -67,37 +72,48 @@ public class GameManager : MonoBehaviour
 
     void CreateBricks()
     {
+        if (leveltype == 0)
+        {
+            brickPrefab = brick1Prefab;
+        }
+        else if (leveltype == 1)
+        {
+            brickPrefab = brick2Prefab;
+            instance.rows = Random.Range(3, 6);
+            instance.columns = Random.Range(5, 10);
+        }
+        else if (leveltype == 2)
+        {
+            brickPrefab = brick3Prefab;
+            instance.rows = Random.Range(3, 6);
+            instance.columns = Random.Range(5, 10);
+        }
+        else
+        {
+            brickPrefab = brick4Prefab;
+            instance.rows = 1;
+            instance.columns = 1;
+        }
+
+        for (int i = brickList.Count - 1; i >= 0; i--)
+        {
+            Destroy(brickList[i].gameObject);
+        }
+        brickList.Clear();
+
         Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(edgePadding, bottomPadding, 0));
         Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1 - edgePadding, 1 - edgePadding, 0));
         bottomLeft.z = 0;
         float w = (topRight.x - bottomLeft.x) / (float)columns;
         float h = (topRight.y - bottomLeft.y) / (float)rows;
 
-        if (level > 1)
+        for (int row = 0; row < instance.rows; row++)
         {
-            instance.rows = Random.Range(3, 7);
-            instance.columns = Random.Range(5, 10);
-
-            for (int row = 0; row < instance.rows; row++)
+            for (int col = 0; col < instance.columns; col++)
             {
-                for (int col = 0; col < instance.columns; col++)
-                {
-                    BrickController brick = Instantiate(brick2Prefab) as BrickController;
-                    brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
-                    brickList.Add(brick);
-                }
-            }
-        }
-        else
-        {
-            for (int row = 0; row < instance.rows; row++)
-            {
-                for (int col = 0; col < instance.columns; col++)
-                {
-                    BrickController brick = Instantiate(brickPrefab) as BrickController;
-                    brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
-                    brickList.Add(brick);
-                }
+                BrickController brick = Instantiate(brickPrefab) as BrickController;
+                brick.transform.position = bottomLeft + new Vector3((col + 0.5f) * w, (row + 0.5f) * h, 0);
+                brickList.Add(brick);
             }
         }
     }
@@ -128,7 +144,7 @@ public class GameManager : MonoBehaviour
         instance.pointParticle.Play();
         instance.scoreUI.text = "Score: " + instance.score;
         
-        if (Random.value < 0.1f)
+        if (Random.value < instance.powerUpChance)
         {
             instance.DropPowerUp();
         }
@@ -151,6 +167,7 @@ public class GameManager : MonoBehaviour
             instance.sound.clip = instance.winner;
             instance.sound.Play();
             instance.level++;
+            instance.leveltype = instance.level % 4;
             instance.CreateBricks();
         }
     }
@@ -185,7 +202,14 @@ public class GameManager : MonoBehaviour
     }
 void DropPowerUp()
     {
-        GameObject power = Instantiate(powerUp);
+        GameObject power = Instantiate(powerUps[Random.Range(0,powerUps.Length)]);
         power.transform.position = GameObject.FindGameObjectWithTag("Ball").transform.position;
     }
+
+    public static void AddLife()
+    {
+        instance.lives = instance.lives + 1;
+        instance.livesUI.text = "Lives: " + instance.lives;
+    }
 }
+
