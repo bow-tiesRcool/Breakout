@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public BrickController brick3Prefab;
     public BrickController brick4Prefab;
     public GameObject[] powerUps;
-    [Range(0, 1)]public float powerUpChance = 0.5f;
+    [Range(0, 1)]public float powerUpChance = 0.1f;
     public int rows = 5;
     public int columns = 10;
     public float edgePadding = 0.1f;

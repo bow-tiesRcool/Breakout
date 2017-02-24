@@ -12,6 +12,7 @@ public class BallController : MonoBehaviour
     List<ParticleSystem> particlePool = new List<ParticleSystem>();
     public float speed = 1;
     Rigidbody body;
+    public bool freezeRotation;
     public AudioSource sound;
     public AudioClip hitPaddle;
     public AudioClip hitWall;

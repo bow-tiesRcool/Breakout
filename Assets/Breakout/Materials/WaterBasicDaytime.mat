@@ -133,7 +133,7 @@ Material:
       second: {r: 1, g: -1, b: -1, a: 1}
     - first:
         name: _horizonColor
-      second: {r: 0.0931012, g: 0.566, b: 1, a: 0}
+      second: {r: 0, g: 0.521446, b: 1, a: 1}
     - first:
         name: horizonColor
       second: {r: 0.615, g: 0.796, b: 0.876, a: 1}
