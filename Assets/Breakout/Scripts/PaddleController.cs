@@ -12,6 +12,7 @@ public class PaddleController : MonoBehaviour
     public float tilt = 5;
     Renderer renderer;
     public string triggerName = "PowerUp";
+    int powerupUse = 0;
 
     public Animator animator;
 
@@ -49,17 +50,52 @@ public class PaddleController : MonoBehaviour
         if (c.gameObject.tag == "PowerUp")
         {
             Debug.Log("Power up aquired!");
-            transform.localScale += new Vector3(0.5f, 0, 0);
+            StartCoroutine("PowerUpTimerPos");
         }
         else if (c.gameObject.tag == "NegativePowerUp")
         {
             Debug.Log("Negative power up aquired!");
-            transform.localScale -= new Vector3(0.5f, 0, 0);
+            StartCoroutine("PowerUpTimerNeg");
         }
         else if (c.gameObject.tag == "LifeUp")
         {
             Debug.Log("Life added");
             GameManager.AddLife();
+        }
+    }
+    IEnumerator PowerUpTimerPos()
+    {
+        Debug.Log("PowerUp is working");
+        if (powerupUse == 0)
+        {
+            powerupUse++;
+            transform.localScale += new Vector3(0.5f, 0, 0);
+            yield return new WaitForSeconds(10);
+            transform.localScale -= new Vector3(0.5f, 0, 0);
+            Debug.Log("Powerup Ended");
+            powerupUse--;
+            
+        }
+        else
+        {
+            yield return null;
+        }
+    }
+    IEnumerator PowerUpTimerNeg()
+    {
+        Debug.Log("PowerUp is working");
+        if (powerupUse == 0)
+        {
+            powerupUse++;
+            transform.localScale -= new Vector3(0.5f, 0, 0);
+            yield return new WaitForSeconds(10);
+            transform.localScale += new Vector3(0.5f, 0, 0);
+            Debug.Log("Powerup Ended");
+            powerupUse--;
+        }
+        else
+        {
+            yield return null;
         }
     }
 }

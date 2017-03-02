@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
         if (leveltype == 0)
         {
             brickPrefab = brick1Prefab;
+            instance.rows = 5;
+            instance.columns = 10;
         }
         else if (leveltype == 1)
         {
@@ -208,8 +210,15 @@ void DropPowerUp()
 
     public static void AddLife()
     {
-        instance.lives = instance.lives + 1;
-        instance.livesUI.text = "Lives: " + instance.lives;
+        if (instance.lives < 5)
+        {
+            instance.lives = instance.lives + 1;
+            instance.livesUI.text = "Lives: " + instance.lives;
+        }
+        else
+        {
+            Debug.Log("Max Lives");
+        }
     }
 }
 
