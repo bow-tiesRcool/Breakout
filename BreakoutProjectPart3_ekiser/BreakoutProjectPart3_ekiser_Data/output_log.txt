@@ -1,0 +1,229 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   NVIDIA
+    VRAM:     4059 MB
+    Driver:   21.21.13.7320
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\GETween.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\GETween.dll into Unity Child Domain
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\GUIAnimatorFREE.dll (this message is harmless)
+Loading C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\GUIAnimatorFREE.dll into Unity Child Domain
+- Completed reload, in  1.701 seconds
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Evan Kiser\Projects\Projects\Breakout\BreakoutProjectPart3_ekiser\BreakoutProjectPart3_ekiser_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.338875 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: dd4 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.402879 ms
+yeas!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 539.
+Total: 4.792623 ms (FindLiveObjects: 0.042256 ms CreateObjectMapping: 0.043897 ms MarkObjects: 0.385231 ms  DeleteObjects: 4.320827 ms)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Life added
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Life added
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Negative power up aquired!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+PowerUp is working
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reusing from my pool
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Powerup Ended
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
